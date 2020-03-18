@@ -53,7 +53,7 @@ var projectConfig = {
     - 详细信息： <https://webpack.docschina.org/configuration/entry-context/#entry>
     - 注意： 如果修改了 entry 的值，你可能需要考虑下是否要同步更改下 package.json 中的 module 属性；
    */
-  entry: "./src/jsexpand.ts",
+  entry: "./src/index.js",
 
   /*
   webpack 的 target，用来告知 webpack   bundles 的运行环境。因为 服务器 和 浏览器 代码都可以用 JavaScript 编写，所以 webpack 提供了多种部署 target(目标)
@@ -93,7 +93,7 @@ var projectConfig = {
     - 备注： 如果设置成空字符串 "" ，则会导出包含所有导出的对象；
     - 详细信息： <https://webpack.docschina.org/configuration/output/#output-libraryexport>
   */
-  libraryExport: "jsexpand",
+  libraryExport: "",
 
   /*
   webpack 的 resolve.alias，创建 import 或 require 的别名，来使模块引入变得更简单
@@ -254,7 +254,7 @@ var projectConfig = {
      If true, your code will be linted during bundling and
      linting errors and warnings will be shown in the console.
     */
-    useEslint: true,
+    useEslint: false,
 
     /*
     是否在浏览器中显示 Eslint 的错误和警告；
