@@ -344,10 +344,10 @@ let propertyDescriptors = {
 
 
   /**
-   * insertItemList(itemList, toIndex, equalTest)
+   * insertItemList(itemList, toIndex = 0, equalTest)
    * 将指定数组itemList中的元素插入到调用者数组的指定索引处，并且会删除调用者数组中 与 itemList中元素 相同的元素
    * @param itemList : [any]    被插入的元素数组
-   * @param toIndex : number    元素被插入到的位置的索引
+   * @param toIndex ? : number    可靠；默认值：0 ； 元素被插入到的位置的索引；
    * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
    * @returns Array<Item>   被删除的元素
    */
@@ -398,7 +398,7 @@ let propertyDescriptors = {
   /**
    * deleteIndexs(...indexs)
    * 删除数组中指定的元素
-   * @param item : any   被删除的元素
+   * @param index : number   被删除的元素的索引
    * @returns Array<Item>   被删除的元素的数组
    */
   deleteIndexs: {
@@ -601,7 +601,7 @@ let propertyDescriptors = {
   /**
    * 获取当前数组在指定数组上的补集
    * @param universalArr ? : Array   全集数组
-   * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
+   * @param equalTest ? : (arrItem,thisItem)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
    * @returns Array   当前数组在指定数组上的补集
    */
   getComplementOn: {
@@ -615,10 +615,10 @@ let propertyDescriptors = {
 
 
 
-      let result =  universalArr.filter(function(item){
+      let result =  universalArr.filter(function(arrItem){
 
-        return !this.some(function(arrItem){
-          return equalTest.call(this,item,arrItem);
+        return !this.some(function(thisItem){
+          return equalTest.call(this,arrItem,thisItem);
         },this);
 
       },this);
@@ -636,7 +636,7 @@ let propertyDescriptors = {
    * getIncludeAndExclude(options,equalTest)
    * @param options : {include ?: Array,exclude ?: Array}    必须；配置 包含 和 排除 数组 的 选项；
    * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
-   * @returns Array   当前数组在指定数组上的补集
+   * @returns Array   返回符合 options 中设置的 包含 和 排除 项 的所有元素
    */
   getIncludeAndExclude: {
     enumerable: false,
@@ -672,7 +672,7 @@ let propertyDescriptors = {
     }
   },
 
-  //处理索引：开始
+  //处理索引：结束
 
 
 
@@ -683,7 +683,7 @@ let propertyDescriptors = {
   //遍历优化：开始
 
 
-
+// dele: 移到 ByTools
 
   /**
    * multipleLoop(option)=> stopLoop()
