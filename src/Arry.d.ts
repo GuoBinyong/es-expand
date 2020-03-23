@@ -436,19 +436,47 @@ getNoRepeatsUseRepeatTest(isRepeated)
   }
 
 
-  namespace Array {
+  interface ArrayConstructor {
 
 
-//集合运算：开始
+    //集合运算：开始
 
-/**
- * 获取所有指定数组的交集
- * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
- * @param array ? : Array   数组
- * @returns Array   所有指定数组的交集
- */
-function intersectionOf<T>(equalTest:TestFun<T>,...arrays:Array<Array<T>>):T[];
+    /**
+     * 获取所有指定数组的交集
+     * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
+     * @param array ? : Array   数组
+     * @returns Array   所有指定数组的交集
+     */
+    intersectionOf<T>(equalTest: TestFun<T>, ...arrays: Array<Array<T>>): T[];
 
+
+
+
+    /**
+     * 判断所有指定数组是否有交集
+     * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
+     * @param array ? : Array   数组
+     * @returns boolean   所有指定数组是否有交集
+     */
+    isIntersect<T>(equalTest: TestFun<T>, ...arrays: Array<Array<T>>): T[];
+
+
+    //集合运算：结束
+
+
+
+
+
+
+
+
+    /**
+     * isArrayLike(target)
+     * 判断 target 是否为 类数组对象
+     * @param target : any    目标
+     * @returns boolean
+     */
+    isArrayLike(target: any): boolean;
 
 
   }
