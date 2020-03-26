@@ -69,7 +69,7 @@ let propertyDescriptors = {
     get: function () {
       let noFlat = Object.values(this).some(function (propValue) {
         let propType = typeof propValue;
-        return propType == "object" || propType == "function";
+        return propValue && (propType === "object" || propType === "function");
       });
 
       return !noFlat;
@@ -231,7 +231,7 @@ let propertyDescriptors = {
 
   /**
    * 判断当前对象是否是指定对象的子集；即当前对象自己的所有可枚举属性 及 值 是否都包含于 指定的对象上；
-   * @param universalObj ? : Object   全集对象
+   * @param universalObj : Object   全集对象
    * @param equalTest ? : (a,b)=>boolean    可选， 默认是通过全等 === 来判断元素是否相等的；测试数组元素是否相同的函数，返回 boolean 值，表示 元素a 和 元素b  相同；
    * @returns boolean   当前对象是否是指定对象的子集
    */
@@ -266,6 +266,7 @@ let propertyDescriptors = {
 
   //URL相关：开始
 
+  // dele: 移到ByURL里
 
   /**
    * toJSONqueryStringify(queryPrefix)

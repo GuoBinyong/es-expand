@@ -34,7 +34,6 @@
  * 接口5
  * getDaysOfMonth()
  * 获取当前时间实例所在月份的总天数
- * @param date : Date  Date 实例。
  * @returns number   返回当前时间所在月份的总天数
  */
 Date.getDayNumberOfMonth = function getDayNumberOfMonth(year, month) {
