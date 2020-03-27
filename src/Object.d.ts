@@ -132,7 +132,7 @@ declare global {
    * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
-  depthLoopOwnProperty<ThisValue>(callback:(this:ReplaceUndefined<ThisValue,any>,key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,all?:boolean,thisValue?:ThisValue,initDepth?:number):any;
+  depthLoopOwnProperty<ThisValue = any>(callback:(this:ThisValue,key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,all?:boolean,thisValue?:ThisValue,initDepth?:number):any;
 
 
 
@@ -147,7 +147,7 @@ declare global {
    * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
-  depthLoopPropertyWithPrototype<ThisValue>(callback:(this:ReplaceUndefined<ThisValue,any>,key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,thisValue?:ThisValue,initDepth?:number):any;
+  depthLoopPropertyWithPrototype<ThisValue = any>(callback:(this:ThisValue,key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,thisValue?:ThisValue,initDepth?:number):any;
 
 
 

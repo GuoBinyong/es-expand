@@ -70,7 +70,7 @@ getNoRepeatsUseRepeatTest(isRepeated)
      * @param currentArray : Array   调用 operation 时 被操作时最新状态的数组；
      *
      */
-    safelyOperateIndexs<ThisValue>(indexList: number[], operation: ArrayCallbackFun<ReplaceUndefined<ThisValue,this>,T, void>, thisValue?: ThisValue): T[];
+    safelyOperateIndexs<ThisValue = this>(indexList: number[], operation: ArrayCallbackFun<ThisValue,T, void>, thisValue?: ThisValue): T[];
 
 
 
@@ -89,7 +89,7 @@ getNoRepeatsUseRepeatTest(isRepeated)
      * @param currentArray : Array   调用 operation 时 被操作时最新状态的数组；
      *
      */
-    safelyOperateItems<ThisType>(itemList: T[], operation: ArrayCallbackFun<ReplaceUndefined<ThisType,this>,T, void>, thisValue?: ThisType): number[];
+    safelyOperateItems<ThisValue = this>(itemList: T[], operation: ArrayCallbackFun<ThisValue,T, void>, thisValue?: ThisValue): number[];
 
 
 
@@ -110,7 +110,7 @@ getNoRepeatsUseRepeatTest(isRepeated)
      * @returns boolean | undefined  表示是否要过滤出 currentValue ；
      *
      */
-    safelyFilter<ThisType>(operation: ArrayCallbackFun<ReplaceUndefined<ThisType,this>,T, any>, thisValue?: ThisType): T[];
+    safelyFilter<ThisValue = this>(operation: ArrayCallbackFun<ThisValue,T, any>, thisValue?: ThisValue): T[];
 
 
     //安全操作：结束
@@ -169,7 +169,7 @@ getNoRepeatsUseRepeatTest(isRepeated)
      * @param needMoveTest : (currentValue,index,arr)=>boolean    测试数组元素是否需要被移动的函数，返回 boolean 值，表示当前元素 currentValue 是否需要被移动；
      * @returns Array<Item>   被移动的元素的数组
      */
-    moveToUseTest<ThisValue>(toIndex: number, needMoveTest: ArrayCallbackFun<ReplaceUndefined<ThisValue,this>,T, any>,thisValue?:ThisValue): T[];
+    moveToUseTest<ThisValue = this>(toIndex: number, needMoveTest: ArrayCallbackFun<ThisValue,T, any>,thisValue?:ThisValue): T[];
 
 
 
@@ -259,7 +259,7 @@ getNoRepeatsUseRepeatTest(isRepeated)
      * @param needDeleteTest : (currentValue,index,arr)=>boolean    测试数组元素是否需要被删除的函数，返回 boolean 值，表示当前元素 currentValue 是否需要被删除；
      * @returns Array<Item>   被删除的元素的数组
      */
-    deleteUseTest<ThisValue>(needDeleteTest: ArrayCallbackFun<ReplaceUndefined<ThisValue,this>,T, any>,thisValue?:ThisValue): T[];
+    deleteUseTest<ThisValue = this>(needDeleteTest: ArrayCallbackFun<ThisValue,T, any>,thisValue?:ThisValue): T[];
 
 
     //删除元素：结束
@@ -284,7 +284,7 @@ getNoRepeatsUseRepeatTest(isRepeated)
      * @param thisArg ? : any 可选。执行 callback 时的用于 this 的值。
      * @returns Array<Index>   通过测试的元素的索引
      */
-    filterIndexs<ThisValue>(filterTest: ArrayCallbackFun<ReplaceUndefined<ThisValue,this>,T, any>, thisValue?: ThisValue): number[];
+    filterIndexs<ThisValue = this>(filterTest: ArrayCallbackFun<ThisValue,T, any>, thisValue?: ThisValue): number[];
 
 
 
