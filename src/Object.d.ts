@@ -1,4 +1,11 @@
+
+
 declare global {
+  type Replace<SourType,MatchType,NewType> = SourType extends MatchType ? NewType : SourType;
+  type ReplaceUndefined<SourType,NewType> = Replace<SourType,undefined,NewType> ;
+  type ReplaceNull<SourType,NewType> = Replace<SourType,null,NewType> ;
+  type ReplaceVoid<SourType,NewType> = Replace<SourType,void|undefined|null,NewType> ;
+
 
     interface Object {
 
@@ -20,12 +27,12 @@ declare global {
    * 检验该对象自身是否是扁平的，即：该对象的所有的直接属性的属性值都是非对象类型；
    */
 
-  isFlat:boolean;
+  readonly isFlat:boolean;
 
     /**
    * 返回对象是否是空的对象，即没有自己的可枚举的属性
    */
-  noKeys:boolean;
+  readonly noKeys:boolean;
 
 
     /**
@@ -125,7 +132,7 @@ declare global {
    * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
-  depthLoopOwnProperty(callback:(key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,all?:boolean,thisValue?:any,initDepth?:number):any;
+  depthLoopOwnProperty<ThisValue>(callback:(this:ReplaceUndefined<ThisValue,any>,key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,all?:boolean,thisValue?:ThisValue,initDepth?:number):any;
 
 
 
@@ -140,7 +147,7 @@ declare global {
    * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
-  depthLoopPropertyWithPrototype(callback,depth,thisValue,initDepth)
+  depthLoopPropertyWithPrototype<ThisValue>(callback:(this:ReplaceUndefined<ThisValue,any>,key:string,value:any,obj:object,currDepth:number)=> any,depth?:number,thisValue?:ThisValue,initDepth?:number):any;
 
 
 
@@ -149,12 +156,6 @@ declare global {
 }
 
 
-interface FormatOptions {
-    // 分隔符
-    separator ?:string;
-    // 大小写类型；   L : 小写，当没有设置 separator 时，将会把所有字符都转为小写 ； U : 大写 ，当没有设置 separator 时，将会把所有字符都转为大写； N : 正常
-    caseType ?: "L" | "U" | "N";
-}
 
 
 export {}

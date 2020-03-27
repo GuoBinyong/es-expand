@@ -40,7 +40,7 @@ Object.defineProperties(String.prototype,{
   /**
    * 把字符串转换成分隔线的格式
    * @param separator ? : string   可选，默认值："-" ；   分隔线
-   * @property caseType  : L | U | N     大小写类型；   L : 小写，当没有设置 separator 时，将会把所有字符都转为小写 ； U : 大写 ，当没有设置 separator 时，将会把所有字符都转为大写； N : 正常，不做改变；
+   * @property caseType ? : L | U | N     大小写类型；   L : 小写，当没有设置 separator 时，将会把所有字符都转为小写 ； U : 大写 ，当没有设置 separator 时，将会把所有字符都转为大写； N : 正常，不做改变；
    * @returns string
    */
   toSeparatorLineFormat:{
@@ -156,6 +156,7 @@ Object.defineProperties(String.prototype,{
     }
   },
 
+  // dele: 移到 bytools
 
   /**
    * 获取当前字符串经过 parseJSONQueryString 解析成的 对象；

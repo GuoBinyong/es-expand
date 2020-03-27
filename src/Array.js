@@ -284,9 +284,9 @@ let propertyDescriptors = {
    */
   moveToUseTest: {
     enumerable: false,
-    value: function (toIndex, needMoveTest) {
+    value: function (toIndex, needMoveTest,thisValue) {
 
-      let moveItems = this.deleteUseTest(needMoveTest);
+      let moveItems = this.deleteUseTest(needMoveTest,thisValue);
       this.splice(toIndex, 0, ...moveItems);
 
       return moveItems;
@@ -441,10 +441,14 @@ let propertyDescriptors = {
    */
   deleteUseTest: {
     enumerable: false,
-    value: function (needDeleteTest) {
+    value: function (needDeleteTest,thisValue) {
+      
+      if (thisValue === undefined){
+        thisValue = this;
+      }
 
       let itemList = this.filter((currentValue, currentIndex, arr) => {
-        return needDeleteTest.call(this, currentValue, currentIndex, arr);
+        return needDeleteTest.call(thisValue, currentValue, currentIndex, arr);
       });
 
 
