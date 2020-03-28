@@ -261,35 +261,6 @@ let propertyDescriptors = {
   //集合：结束
 
 
-
-
-
-  //URL相关：开始
-
-  // dele: 移到ByURL里
-
-  /**
-   * toJSONqueryStringify(queryPrefix)
-   * 把当前对象 用JSON的方式格式化成 URL 的参数格式
-   * @param queryPrefix ? : boolean    可选；默认值：false; 是否带URL的查询字符串前缀 ?
-   * @returns 格式化后的 URL 的参数格式
-   *
-   * 说明
-   * 本方法是通过 JSONQueryStringify 方法进行格式化的
-   */
-  toJSONqueryStringify: {
-    enumerable: false,
-    value: function (queryPrefix) {
-      return JSONQueryStringify(this,queryPrefix);
-    }
-  },
-
-
-  //URL相关：结束
-
-
-
-
   /**
    * depthLoopOwnProperty(callback,depth,all,thisValue,initDepth)=> stopInfo
    * 递归遍历自身属性链中的所有属性

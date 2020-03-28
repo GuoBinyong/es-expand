@@ -156,19 +156,6 @@ Object.defineProperties(String.prototype,{
     }
   },
 
-  // dele: 移到 bytools
-
-  /**
-   * 获取当前字符串经过 parseJSONQueryString 解析成的 对象；
-   *
-   * 说明：
-   * 本方法是通过 parseJSONQueryString 方法进行解析的；
-   */
-  urlJSONQueryObj:{
-    get:function () {
-     return parseJSONQueryString(this);
-    }
-  },
 
   //URL相关：结束
 
