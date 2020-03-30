@@ -1,8 +1,8 @@
 {
-  "name": "jsexpand",
+  "name": "js-expand",
   "version": "1.0.0",
-  "description": "jsexpand 提供了对 JS 中原生类型功能的扩展（如Object、Array、JSON、String、Number、Math、Date等等），也提供了一些工具函数；",
-  "main": "dist/jsexpand.js",
+  "description": "js-expand 提供了对 JS 中原生类型功能的扩展（如Object、Array、JSON、String、Number、Math、Date等等），也提供了一些工具函数；",
+  "main": "dist/js-expand.js",
   "module": "src/index.js",
   "types": "src/index.d.ts",
   "sideEffects": true,
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GuoBinyong/jsexpand.git"
+    "url": "https://github.com/GuoBinyong/js-expand.git"
   },
   "keywords": [
     "扩展",
