@@ -2,7 +2,7 @@
   "name": "js-expand",
   "version": "1.0.0",
   "description": "js-expand 提供了对 JS 中原生类型功能的扩展（如Object、Array、JSON、String、Number、Math、Date等等），也提供了一些工具函数；",
-  "main": "dist/js-expand.js",
+  "main": "dist/jsExpand.js",
   "module": "src/index.js",
   "types": "types/index.d.ts",
   "sideEffects": true,
