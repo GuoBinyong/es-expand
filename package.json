@@ -35,6 +35,7 @@
   "license": "ISC",
   "files": [
     "src/*",
+    "types/*",
     "prod/*",
     "dist/*"
   ],
