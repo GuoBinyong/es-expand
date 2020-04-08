@@ -46,10 +46,10 @@ interface JSON {
   /**
    * correctParse(text,reviver)
    * 正确地解析，即：如果 text 是有效的 JSON 字符串，则解析它并返回解析后的结果，否则，返回原来的text
-   * @param text :  string   被解析的字符串
+   * @param text ?:  string   被解析的字符串
    * @returns any
    */
-  correctParse(text: string, reviver?: (this: any, key: string, value: any) => any): any;
+  correctParse(text?: string, reviver?: (this: any, key: string, value: any) => any): any;
 
 
 }
