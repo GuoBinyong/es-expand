@@ -27,7 +27,7 @@ Math.distanceSort = function distanceSort(target, ...nums) {
   });
 
   return disSort;
-}
+};
 
 
 
@@ -53,7 +53,7 @@ Math.distanceSort = function distanceSort(target, ...nums) {
 Math.nearest = function nearest(target, ...nums) {
   let disSort = Math.distanceSort(target,...nums);
   return disSort[0];
-}
+};
 
 
 
@@ -78,4 +78,4 @@ Math.farthest = function farthest(target, ...nums) {
   let disSort = Math.distanceSort(target,...nums);
   let lastIndex = disSort.length - 1;
   return disSort[lastIndex];
-}
+};

@@ -64,7 +64,7 @@ Date.getDayNumberOfMonth = function getDayNumberOfMonth(year, month) {
   date.setDate(0);
   var dayNum = date.getDate();
   return dayNum;
-}
+};
 
 
 /**
@@ -72,7 +72,7 @@ Date.getDayNumberOfMonth = function getDayNumberOfMonth(year, month) {
  */
 Date.prototype.getDayNumber = function getDayNumber() {
   return Date.getDayNumberOfMonth(this);
-}
+};
 
 
 
@@ -91,7 +91,7 @@ Date.prototype.setYearOffset = function setYearOffset(offset) {
   }
 
   return this.getFullYear();
-}
+};
 
 
 
@@ -108,7 +108,7 @@ Date.prototype.setMonthOffset = function setMonthOffset(offset) {
   }
 
   return this.getMonth();
-}
+};
 
 
 
@@ -127,7 +127,7 @@ Date.prototype.setDateOffset = function setDateOffset(offset) {
   }
 
   return this.getDate();
-}
+};
 
 
 
@@ -144,7 +144,7 @@ Date.prototype.setHourOffset = function setHourOffset(offset) {
   }
 
   return this.getHours();
-}
+};
 
 
 
@@ -164,7 +164,7 @@ Date.prototype.setMinuteOffset = function setMinuteOffset(offset) {
   }
 
   return this.getMinutes();
-}
+};
 
 
 
@@ -185,7 +185,7 @@ Date.prototype.setSecondOffset = function setSecondOffset(offset) {
   }
 
   return this.getSeconds();
-}
+};
 
 
 

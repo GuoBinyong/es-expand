@@ -21,13 +21,11 @@ let propertyDescriptors = {
   findKey: {
     enumerable: false,
     value: function (testFun) {
-
-      let propKey = Object.keys(this).find((key, index) => {
+      return Object.keys(this).find((key, index) => {
         let propValue = this[key];
         return testFun(propValue, key, index);
       });
 
-      return propKey;
     }
   },
 
@@ -441,7 +439,7 @@ Object.assignKeys = function (target,keys,...sources){
 
     Object.assign(target,...keysSourceList);
 
-  };
+  }
 
 
   return target ;
@@ -480,7 +478,7 @@ Object.assignExcludeKeys = function (target,keys,...sources){
 
     Object.assign(target,...keysSourceList);
 
-  };
+  }
 
 
   return target ;
@@ -522,7 +520,7 @@ Object.assignIncludeAndExcludeKeys = function (target,options,...sources){
 
     Object.assign(target,...keysSourceList);
 
-  };
+  }
 
 
   return target ;

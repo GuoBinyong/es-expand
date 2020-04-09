@@ -27,11 +27,9 @@ Object.defineProperties(String.prototype,{
    */
   capFirstLetter:{
     get:function () {
-      var targetStr = this.replace(/(^\W*)(\w)/,function (match,p1,p2) {
+      return this.replace(/(^\W*)(\w)/,function (match,p1,p2) {
         return p1 + p2.toUpperCase();
       });
-
-      return targetStr;
     }
   },
 
@@ -90,11 +88,9 @@ Object.defineProperties(String.prototype,{
       var separatorRexStr = separator + "+([A-Za-z]?)" ;
       var separatorRex = new RegExp(separatorRexStr,"g");
 
-      var targetStr = this.replace(separatorRex,function (match,p1) {
+      return this.replace(separatorRex,function (match,p1) {
         return p1.toUpperCase() ;
       });
-
-      return targetStr;
     }
   },
 

@@ -188,13 +188,11 @@ let propertyDescriptors = {
       }
 
       let arrayCopy = this.slice();
-      let filterItem = arrayCopy.filter((currentValue) => {
+
+      return arrayCopy.filter((currentValue) => {
         let currentIndex = this.indexOf(currentValue);
         operation.call(thisValue, currentValue, currentIndex, this);
       });
-
-
-      return filterItem;
 
     }
 
@@ -442,7 +440,7 @@ let propertyDescriptors = {
   deleteUseTest: {
     enumerable: false,
     value: function (needDeleteTest,thisValue) {
-      
+
       if (thisValue === undefined){
         thisValue = this;
       }
@@ -619,16 +617,14 @@ let propertyDescriptors = {
 
 
 
-      let result =  universalArr.filter(function(arrItem){
+
+      return universalArr.filter(function(arrItem){
 
         return !this.some(function(thisItem){
           return equalTest.call(this,arrItem,thisItem);
         },this);
 
       },this);
-
-
-      return result;
     }
   },
 
@@ -797,7 +793,8 @@ Array.intersectionOf = function intersectionOf(equalTest,...arrays) {
   let leastArr = arrays.shift();
 
 
-  let result =  leastArr.filter(function(item){
+
+  return leastArr.filter(function(item){
 
     return arrays.every(function(arr){
 
@@ -808,9 +805,6 @@ Array.intersectionOf = function intersectionOf(equalTest,...arrays) {
     });
 
   });
-
-
-  return result;
 }
 
 
@@ -847,7 +841,9 @@ Array.isIntersect = function isIntersect(equalTest,...arrays) {
   let leastArr = arrays.shift();
 
 
-  let result =  leastArr.some(function(item){
+
+
+  return leastArr.some(function(item){
 
     return arrays.every(function(arr){
 
@@ -858,9 +854,6 @@ Array.isIntersect = function isIntersect(equalTest,...arrays) {
     });
 
   });
-
-
-  return result;
 };
 
 
@@ -887,4 +880,4 @@ Array.isIntersect = function isIntersect(equalTest,...arrays) {
 Array.isArrayLike = function isArrayLike(target) {
   let length = target && target.length;
   return Number.isInteger(target.length) && length >= 0;
-}
+};
