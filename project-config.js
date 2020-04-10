@@ -84,7 +84,7 @@ var projectConfig = {
     - 类型： "var" | "assign" | "this" | "window" | "self" | "global" | "commonjs" | "commonjs2" | "commonjs-module" | "amd" | "amd-require" | "umd" | "umd2" | "jsonp" | "system"
     - 详细信息： <https://webpack.docschina.org/configuration/output/#output-librarytarget>
   */
-  libraryTarget: "umd",
+  // libraryTarget: "umd",
 
   /*
   库中被导出的项；webpack 的 output.libraryExport ；
