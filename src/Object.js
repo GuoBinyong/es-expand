@@ -1,4 +1,4 @@
-import "./Arry"
+import "./Array"
 import "./String"
 
 /*

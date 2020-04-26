@@ -1,4 +1,4 @@
-import "./Arry"
+import "./Array"
 import "./String"
 
 type Replace<SourType, MatchType, NewType> = SourType extends MatchType ? NewType : SourType;
