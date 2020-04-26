@@ -78,7 +78,7 @@ Object.defineProperties(String.prototype,{
    * @param separators ? : string | string[]   可选，默认值：['-', '_'] ；   分隔线，或 包含多个分隔线的数组
    * @returns string
    */
-  toCamelFormat:{
+  toHumpFormat:{
     value:function (separators) {
       if (separators == undefined) {
         separators = ['-', '_'];

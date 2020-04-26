@@ -31,7 +31,7 @@ interface String {
    * @param separators ? : string | string[]   可选，默认值：['-', '_'] ；   分隔线，或 包含多个分隔线的数组
    * @returns string
    */
-  toCamelFormat(separators?: string | string[]): string;
+  toHumpFormat(separators?: string | string[]): string;
 
 
   /**
