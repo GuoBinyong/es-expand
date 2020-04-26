@@ -1,3 +1,6 @@
+import "./Arry"
+import "./String"
+
 type Replace<SourType, MatchType, NewType> = SourType extends MatchType ? NewType : SourType;
 type ReplaceUndefined<SourType, NewType> = Replace<SourType, undefined, NewType> ;
 type ReplaceNull<SourType, NewType> = Replace<SourType, null, NewType> ;

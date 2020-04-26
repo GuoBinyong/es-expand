@@ -75,22 +75,24 @@ Object.defineProperties(String.prototype,{
 
   /**
    * 把字符串从分隔线格式转换成驼峰格式
-   * @param separator ? : string   可选，默认值："-" ；   分隔线
+   * @param separators ? : string | string[]   可选，默认值："-" ；   分隔线，或 包含多个分隔线的数组
    * @returns string
    */
   toCamelFormat:{
-    value:function (separator) {
-
-      if (separator == undefined)  {
-        separator = "-" ;
+    value:function (separators) {
+      if (separators == undefined) {
+        separators = ['-', '_']
+      } else if (!Array.isArray(separators)) {
+        separators = [separators]
       }
-
-      var separatorRexStr = separator + "+([A-Za-z]?)" ;
-      var separatorRex = new RegExp(separatorRexStr,"g");
-
-      return this.replace(separatorRex,function (match,p1) {
-        return p1.toUpperCase() ;
+    
+      var separatorRexStr = '(' + separators.join('|') + ')' + '+([A-Za-z]?)'
+      var separatorRex = new RegExp(separatorRexStr, 'g')
+    
+      return this.replace(separatorRex, function (match, p1, p2) {
+        return p2.toUpperCase()
       });
+
     }
   },
 

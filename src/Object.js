@@ -1,3 +1,5 @@
+import "./Arry"
+import "./String"
 
 /*
  使用属性描述来定义属性的原因：
