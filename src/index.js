@@ -5,4 +5,3 @@ import './Math'
 import './Number'
 import './Date'
 import './Object'
-
