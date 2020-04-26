@@ -28,7 +28,7 @@ interface String {
 
   /**
    * 把字符串从分隔线格式转换成驼峰格式
-   * @param separators ? : string | string[]   可选，默认值："-" ；   分隔线，或 包含多个分隔线的数组
+   * @param separators ? : string | string[]   可选，默认值：['-', '_'] ；   分隔线，或 包含多个分隔线的数组
    * @returns string
    */
   toCamelFormat(separators?: string | string[]): string;
