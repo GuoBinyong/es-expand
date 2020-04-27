@@ -6,6 +6,7 @@ Object.defineProperties(String.prototype,{
    * 是否是有效的 JSON 字符串
    */
   isJSONString:{
+    configurable:true,
     get: function () {
       return JSON.isJSONString(this);
     }
@@ -16,6 +17,7 @@ Object.defineProperties(String.prototype,{
    * 是否不包任何非空字符
    */
   noChars:{
+    configurable:true,
     get: function () {
       return !(/\S+/.test(this));
     }
@@ -26,6 +28,7 @@ Object.defineProperties(String.prototype,{
    * 首字母大写
    */
   capFirstLetter:{
+    configurable:true,
     get:function () {
       return this.replace(/(^\W*)(\w)/,function (match,p1,p2) {
         return p1 + p2.toUpperCase();
@@ -42,6 +45,8 @@ Object.defineProperties(String.prototype,{
    * @returns string
    */
   toSeparatorLineFormat:{
+    configurable:true,
+    writable:true,
     value:function (separator,caseType) {
 
       if (separator == undefined)  {
@@ -79,6 +84,8 @@ Object.defineProperties(String.prototype,{
    * @returns string
    */
   toHumpFormat:{
+    configurable:true,
+    writable:true,
     value:function (separators) {
       if (separators == undefined) {
         separators = ['-', '_'];
@@ -108,6 +115,8 @@ Object.defineProperties(String.prototype,{
    * @returns [string]  所有指定格式的字符串数组
    */
   getAllStrForFormats:{
+    configurable:true,
+    writable:true,
     value:function (formats) {
       var _this = this;
 
@@ -149,6 +158,7 @@ Object.defineProperties(String.prototype,{
    * 是否是URL
    */
   isURL:{
+    configurable:true,
     get: function () {
       return /^\w+:\/\/\S+/.test(this);
     }

@@ -21,6 +21,8 @@ let propertyDescriptors = {
    * @param testFun:(propValue,propkey,index)=> boolean  ; 测试条件函数
    */
   findKey: {
+    configurable:true,
+    writable:true, //为了兼容 lodash 库，因为 rollup-plugin-typescript2 所依赖的 lodash 库会更改该属性 findKey
     enumerable: false,
     value: function (testFun) {
       return Object.keys(this).find((key, index) => {
@@ -38,6 +40,8 @@ let propertyDescriptors = {
    * @return PropertyInfo : {key:string,value:any}
    */
   findProperty: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (testFun) {
 
@@ -65,6 +69,7 @@ let propertyDescriptors = {
    * 检验该对象自身是否是扁平的，即：该对象的所有的直接属性的属性值都是非对象类型；
    */
   isFlat: {
+    configurable:true,
     enumerable: false,
     get: function () {
       let noFlat = Object.values(this).some(function (propValue) {
@@ -83,6 +88,7 @@ let propertyDescriptors = {
    * 返回对象是否是空的对象，即没有自己的可枚举的属性
    */
   noKeys:{
+    configurable:true,
     enumerable:false,
     get:function(){
       return Object.keys(this).length == 0;
@@ -99,6 +105,8 @@ let propertyDescriptors = {
    * @return [any]    对象中拥有的相应key的值
    */
   getValuesOfKeys: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (keys) {
 
@@ -123,6 +131,8 @@ let propertyDescriptors = {
    *
    */
   getVirtualValuesOfKeys: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (keys) {
 
@@ -148,6 +158,8 @@ let propertyDescriptors = {
    * @returns any  对象中所有指定的属性中的第一个有效值
    */
   findValueOfKeys: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (keys) {
       var findValue ;
@@ -180,6 +192,8 @@ let propertyDescriptors = {
    * @returns [any]  对象中所有指定格式的属性的值列表
    */
   getValuesForKeyFormats: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (key,formats) {
       var keyStrList = key.getAllStrForFormats(formats);
@@ -198,6 +212,8 @@ let propertyDescriptors = {
    * @returns [any]  对象中所有指定格式的属性的值列表
    */
   getVirtualValuesForKeyFormats: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (key,formats) {
       var keyStrList = key.getAllStrForFormats(formats);
@@ -216,6 +232,8 @@ let propertyDescriptors = {
    * @returns any  对象中所有指定格式的属性的第一个有效值
    */
   findValueForKeyFormats: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (key,formats) {
       var keyStrList = key.getAllStrForFormats(formats);
@@ -236,6 +254,8 @@ let propertyDescriptors = {
    * @returns boolean   当前对象是否是指定对象的子集
    */
   isSubsetOf: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (universalObj,equalTest) {
 
@@ -272,6 +292,8 @@ let propertyDescriptors = {
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
   depthLoopOwnProperty:{
+    configurable:true,
+    writable:true,
     enumerable: false,
     value:function (callback,depth,all,thisValue,initDepth) {
       if (depth == undefined){
@@ -335,6 +357,8 @@ let propertyDescriptors = {
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
   depthLoopPropertyWithPrototype:{
+    configurable:true,
+    writable:true,
     enumerable: false,
     value:function (callback,depth,thisValue,initDepth) {
       if (depth == undefined){
@@ -387,6 +411,8 @@ let propertyDescriptors = {
    * @returns Object   返回包含符合条件的所有属性的新对象
    */
   filterProperty:{
+    configurable:true,
+    writable:true,
     enumerable: false,
     value:function (filter,thisValue) {
       if (arguments.length < 2){

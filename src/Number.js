@@ -18,6 +18,8 @@ let propertyDescriptors = {
    * @returns [number]   返回 按距离 自己 从近到远排列的数的数组
    */
   distanceSort:{
+    configurable:true,
+    writable:true,
     enumerable:false,
     value:function(...nums){
       return Math.distanceSort(this,...nums);
@@ -41,6 +43,8 @@ let propertyDescriptors = {
    * @returns [number]   返回 按距离 自己 从近到远排列的数的数组
    */
   nearest:{
+    configurable:true,
+    writable:true,
     enumerable:false,
     value:function(...nums){
       return Math.nearest(this,...nums);
@@ -65,6 +69,8 @@ let propertyDescriptors = {
    * @returns [number]   返回 按距离 自己 从近到远排列的数的数组
    */
   farthest:{
+    configurable:true,
+    writable:true,
     enumerable:false,
     value:function(...nums){
       return Math.farthest(this,...nums);

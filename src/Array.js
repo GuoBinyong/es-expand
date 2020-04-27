@@ -21,6 +21,8 @@ let propertyDescriptors = {
   - 该方法是通过 严格相等 `===` 运算符来判断 数组的元素是否重复的；
   */
   getNoRepeats: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function () {
 
@@ -44,6 +46,8 @@ let propertyDescriptors = {
    - 该方法是通过 isRepeated 函数来判断 数组的元素是否重复的；
    */
   getNoRepeatsUseRepeatTest: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (isRepeated) {
 
@@ -95,6 +99,8 @@ let propertyDescriptors = {
    *
    */
   safelyOperateIndexs: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (indexList, operation, thisValue) {
 
@@ -135,6 +141,8 @@ let propertyDescriptors = {
    *
    */
   safelyOperateItems: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (itemList, operation, thisValue) {
 
@@ -180,6 +188,8 @@ let propertyDescriptors = {
    *
    */
   safelyFilter: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (operation, thisValue) {
 
@@ -223,6 +233,8 @@ let propertyDescriptors = {
    * @returns Array   被移动的元素的数组
    */
   move: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (fromIndex, toIndex, length = 1) {
       let moveEleArr = this.splice(fromIndex, length);
@@ -242,6 +254,8 @@ let propertyDescriptors = {
    * @returns Array<Item>   被移动的元素的数组
    */
   moveTo: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (toIndex, ...fromIndexs) {
 
@@ -262,6 +276,8 @@ let propertyDescriptors = {
    * @returns Array<number>   被移动的元素的索引的数组
    */
   moveItemsTo: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (toIndex, ...items) {
 
@@ -281,6 +297,8 @@ let propertyDescriptors = {
    * @returns Array<Item>   被移动的元素的数组
    */
   moveToUseTest: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (toIndex, needMoveTest,thisValue) {
 
@@ -316,6 +334,8 @@ let propertyDescriptors = {
    * @returns Array<Item>   被删除的元素
    */
   insertItem: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (item, toIndex = 0, equalTest) {
 
@@ -350,6 +370,8 @@ let propertyDescriptors = {
    * @returns Array<Item>   被删除的元素
    */
   insertItemList: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (itemList, toIndex, equalTest) {
       return itemList.reduceRight((deleItemList, item) => {
@@ -381,6 +403,8 @@ let propertyDescriptors = {
    * @returns Array   被删除的元素的数组
    */
   delete: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (start, end) {
       if (end == null) {
@@ -400,6 +424,8 @@ let propertyDescriptors = {
    * @returns Array<Item>   被删除的元素的数组
    */
   deleteIndexs: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (...indexs) {
 
@@ -419,6 +445,8 @@ let propertyDescriptors = {
    * @returns Array<number>   被删除的元素的索引数组
    */
   deleteItems: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (...items) {
 
@@ -438,6 +466,8 @@ let propertyDescriptors = {
    * @returns Array<Item>   被删除的元素的数组
    */
   deleteUseTest: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (needDeleteTest,thisValue) {
 
@@ -478,6 +508,8 @@ let propertyDescriptors = {
    * @returns Array<Index>   通过测试的元素的索引
    */
   filterIndexs: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (filterTest,thisArg) {
 
@@ -501,6 +533,7 @@ let propertyDescriptors = {
    * 属性; 返回最后一个元素
    */
   lastItem: {
+    configurable:true,
     enumerable: false,
     get: function () {
       return this[this.length - 1];
@@ -520,6 +553,8 @@ let propertyDescriptors = {
    * @returns boolean
    */
   isContains: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (arr,equalTest) {
 
@@ -550,6 +585,8 @@ let propertyDescriptors = {
    * @returns Array   所有指定数组的交集
    */
   getIntersection: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (arr,equalTest) {
 
@@ -578,6 +615,8 @@ let propertyDescriptors = {
    * @returns boolean   当前数组与指定数组是否相交
    */
   isIntersect: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (arr,equalTest) {
 
@@ -607,6 +646,8 @@ let propertyDescriptors = {
    * @returns Array   当前数组在指定数组上的补集
    */
   getComplementOn: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (universalArr,equalTest) {
       if (!equalTest) {
@@ -639,6 +680,8 @@ let propertyDescriptors = {
    * @returns Array   返回符合 options 中设置的 包含 和 排除 项 的所有元素
    */
   getIncludeAndExclude: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (options,equalTest) {
       var {include,exclude} = options;
@@ -666,6 +709,8 @@ let propertyDescriptors = {
    * @param index : number   正向的索引
    */
   reverseIndexForIndex: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (index) {
       return this.length - index - 1;
@@ -691,6 +736,8 @@ let propertyDescriptors = {
    * @returns Array    返回包含所有删除元素的数组
    */
   queuePush: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (...items) {
       this.push(...items);
@@ -706,6 +753,8 @@ let propertyDescriptors = {
    * @returns any    返回被删除的元素
    */
   queuePop: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function () {
       this.unshift(undefined);
@@ -723,6 +772,8 @@ let propertyDescriptors = {
    * @returns Array    返回包含所有删除元素的数组
    */
   queueUnshift: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function (...items) {
       this.unshift(...items);
@@ -740,6 +791,8 @@ let propertyDescriptors = {
    * @returns any    返回被删除的元素
    */
   queueShift: {
+    configurable:true,
+    writable:true,
     enumerable: false,
     value: function () {
       this.push(undefined);
