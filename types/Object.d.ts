@@ -121,7 +121,7 @@ interface Object {
    * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
-  depthLoopOwnProperty<ThisValue = any>(callback: (this: ThisValue, key: string, value: any, obj: object, currDepth: number) => any, depth?: number, all?: boolean, thisValue?: ThisValue, initDepth?: number): any;
+  depthLoopOwnProperty<ThisValue = any>(callback: (this: ThisValue, key: string, value: any, obj: any, currDepth: number) => any, depth?: number, all?: boolean, thisValue?: ThisValue, initDepth?: number): any;
 
 
   /**
@@ -133,7 +133,7 @@ interface Object {
    * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
    * @returns stopInfo ： any   终止循环时返回的信息；
    */
-  depthLoopPropertyWithPrototype<ThisValue = any>(callback: (this: ThisValue, key: string, value: any, obj: object, currDepth: number) => any, depth?: number, thisValue?: ThisValue, initDepth?: number): any;
+  depthLoopPropertyWithPrototype<ThisValue = any>(callback: (this: ThisValue, key: string, value: any, obj: any, currDepth: number) => any, depth?: number, thisValue?: ThisValue, initDepth?: number): any;
 
 
   /**
@@ -141,9 +141,9 @@ interface Object {
    * 返回包含符合条件的所有属性的新对象
    * @param filter : (key,value,obj)=>boolean    必选；
    * @param thisValue ? : any   可选；默认值：当前对象； filter 函数的this 值；
-   * @returns Object   返回包含符合条件的所有属性的新对象
+   * @returns any   返回包含符合条件的所有属性的新对象
    */
-  filterProperty<ThisValue = any>(filter: (this: ThisValue, key: string, value: any, obj: object) => any, thisValue?: ThisValue): object;
+  filterProperty<ThisValue = any>(filter: (this: ThisValue, key: string, value: any, obj: any) => any, thisValue?: ThisValue): any;
 
 
 }
@@ -170,7 +170,7 @@ interface ObjectConstructor {
    * @return target    返回目标对象
    */
 
-  assignKeys(target: object, keys: string[] | null | undefined, ...sources: object[]): object;
+  assignKeys(target: object, keys: string[] | null | undefined, ...sources: object[]): any;
 
 
   /**
@@ -181,7 +181,7 @@ interface ObjectConstructor {
    * @return target    返回目标对象
    */
 
-  assignExcludeKeys(target: object, keys: string[] | null | undefined, ...sources: object[]): object;
+  assignExcludeKeys(target: object, keys: string[] | null | undefined, ...sources: object[]): any;
 
 
   /**
@@ -194,7 +194,7 @@ interface ObjectConstructor {
    * IncludeAndExcludeKeysOptions = {include ?: Array,exclude ?: Array}
    */
 
-  assignIncludeAndExcludeKeys(target: object, options: { include?: string[], exclude?: string[] } | null | undefined, ...sources: object[]): object;
+  assignIncludeAndExcludeKeys(target: object, options: { include?: string[], exclude?: string[] } | null | undefined, ...sources: object[]): any;
 
 
   /**
@@ -217,7 +217,7 @@ interface ObjectConstructor {
    * @returns proxy : Object  传递给函数的 代理对象 proxy
    */
 
-  defineProxyProperty(proxy: object, target: object, prop: string, options?: ProxyOptions): object;
+  defineProxyProperty(proxy: object, target: object, prop: string, options?: ProxyOptions): any;
 
 
   /**
@@ -230,7 +230,7 @@ interface ObjectConstructor {
    *
    *  @returns proxy : Object  传递给函数的 代理对象 proxy
    */
-  defineProxyProperties(proxy: object, target: object, props: string[], options?: ProxyOptions): object;
+  defineProxyProperties(proxy: object, target: object, props: string[], options?: ProxyOptions): any;
 
   /**
    * 批量定义代理属性
@@ -242,7 +242,7 @@ interface ObjectConstructor {
    * @returns proxy : Object  传递给函数的 代理对象 proxy
    */
 
-  defineProxyProperties(proxy: object, target: object, propOptions: { [prop: string]: ProxyOptions }): object;
+  defineProxyProperties(proxy: object, target: object, propOptions: { [prop: string]: ProxyOptions }): any;
 
 
   /**
