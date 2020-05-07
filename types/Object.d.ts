@@ -248,6 +248,29 @@ declare global {
     defineProxyProperties(proxy: object, target: object, propOptions: { [prop: string]: ProxyOptions }): any;
 
 
+
+
+    /**
+     * 判断 目标 是否是可迭代的对象，即 实现了 可迭代协议
+     * @param target : any
+     * @return {boolean}
+     */
+    isIterable(target:any):boolean;
+
+
+  /**
+   * 判断 目标 是否是迭代器，即 实现了 迭代器协议
+   * @param target : any
+   * @return {boolean}
+   */
+  isIterator(target:any):boolean;
+
+
+
+
+
+
+
     /**
      * isDepthEqual(a, b, nullNotEqualUndefined)
      * 深度测试  a 和 b 是否完全相等；如果 a 和 b 是 对象，会进行递归相等测试，只有所有的属性 都相等时，才会认为是相等的；
@@ -255,14 +278,16 @@ declare global {
      * 注意：
      * - 对于 值为 undefined 的属性 和 不存在的属性 认为是相等的属性；
      * - 对于 对于 函数 ，如果整个函数的代码字符（fun.toString()）串相等，则认为函数是相等的；
-     * - 目前只判断了 基础类型、Object、Array、function、Date 类型；
+     * - 目前只判断了 基础类型、Object、Array、function、Date、可迭代 类型；
+     * - 对于可迭代类型，必须迭代 索引 和 索引对应的值 都相等才认为是相等的；
      *
      * @param a : any
      * @param b : any
      * @param nullNotEqualUndefined ? : boolean    可选；默认值：false;  是否把 null 和 undefined 作为不等的值来对待
+     * @param strict ? : boolean    可选；默认值：false;  是否使用严格相等来对 基本类型的值 进行比较
      * @return boolean
      */
-    isDepthEqual(a: any, b: any, nullNotEqualUndefined?: boolean): boolean;
+    isDepthEqual(a: any, b: any, nullNotEqualUndefined?: boolean,strict?:boolean): boolean;
 
 
   }
