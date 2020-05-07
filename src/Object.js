@@ -772,7 +772,7 @@ Object.isDepthEqual = function isDepthEqual(a, b, nullNotEqualUndefined) {
       });
     }
 
-    if (aEntrs.length != bEntrs) {
+    if (aEntrs.length != bEntrs.length) {
       return false;
     }
 
