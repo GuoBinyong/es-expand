@@ -740,7 +740,7 @@ Object.isDepthEqual = function isDepthEqual(a, b, nullNotEqualUndefined,strict) 
     }
   }else {
     if  (nullNotEqualUndefined){
-      var equalTest = function (a,b) {return  a == null ? a === b : a == b}
+      equalTest = function (a,b) {return  a == null ? a === b : a == b}
     }else {
       equalTest = function (a,b) {return a == b}
     }
@@ -779,10 +779,14 @@ Object.isDepthEqual = function isDepthEqual(a, b, nullNotEqualUndefined,strict) 
 
     if (a instanceof Map){
       if  (b instanceof Map && a.size === b.size){
-
-      }else {
-        return false
+        for (let [key,aVal] of a){
+          if  (!(b.has(key) && Object.isDepthEqual(aVal, b.get(key), nullNotEqualUndefined,strict))){
+            return false;
+          }
+        }
+        return true;
       }
+      return false;
     }
 
 
@@ -817,7 +821,7 @@ Object.isDepthEqual = function isDepthEqual(a, b, nullNotEqualUndefined,strict) 
 
 
 
-    if (isArr) {
+    if (aIsArr) {
       if (a.length != b.length) {
         return false;
       }
@@ -832,7 +836,6 @@ Object.isDepthEqual = function isDepthEqual(a, b, nullNotEqualUndefined,strict) 
     var aEntrs = Object.entries(a);
     var bEntrs = Object.entries(b);
     aEntrs = aEntrs.filter(function (entr) {
-      !equalTest(entr[1],undefined)
       return !equalTest(entr[1],undefined)
     });
     bEntrs = bEntrs.filter(function (entr) {
