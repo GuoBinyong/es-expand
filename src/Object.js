@@ -431,6 +431,20 @@ let propertyDescriptors = {
   },
 
 
+  /**
+   * mySelf
+   * 获取自己；此属性可用于获取原始类型数据对应的包装对象，即：可将原始类型的值转为对应的包装类型的实例对象
+   * @returns this   返回自身
+   */
+  mySelf: {
+    configurable:true,
+    enumerable: false,
+    get: function () {
+      return this;
+    }
+  },
+
+
 };
 
 

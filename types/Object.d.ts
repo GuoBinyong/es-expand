@@ -149,6 +149,14 @@ declare global {
     filterProperty<ThisValue = any>(filter: (this: ThisValue, key: string, value: any, obj: any) => any, thisValue?: ThisValue): any;
 
 
+    /**
+     * mySelf
+     * 获取自己；此属性可用于获取原始类型数据对应的包装对象，即：可将原始类型的值转为对应的包装类型的实例对象
+     * @returns this   返回自身
+     */
+    mySelf:this;
+
+
   }
 
 
