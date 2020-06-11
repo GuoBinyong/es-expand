@@ -1,7 +1,6 @@
-import "./Array"
-import "./Date"
-import "./JSON"
-import "./Math"
-import "./Number"
-import "./String"
-import "./Object"
+import './Array'
+import './String'
+import './Math'
+import './Number'
+import './Date'
+import './Object'

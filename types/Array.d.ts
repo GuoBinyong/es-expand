@@ -365,16 +365,6 @@ interface ArrayConstructor {
 
   //集合运算：结束
 
-
-  /**
-   * isArrayLike(target)
-   * 判断 target 是否为 类数组对象
-   * @param target : any    目标
-   * @returns boolean
-   */
-  isArrayLike(target: any): boolean;
-
-
 }
 
 

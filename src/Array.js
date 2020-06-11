@@ -346,7 +346,7 @@ let propertyDescriptors = {
       }
 
 
-      let deleItems = this.filter((currentValue, currentIndex, arr) => {
+      let deleItems = this.filter((currentValue) => {
         return equalTest.call(this, currentValue, item);
       });
 
@@ -914,23 +914,3 @@ Array.isIntersect = function isIntersect(equalTest,...arrays) {
 
 
 //集合运算：结束
-
-
-
-
-
-
-
-
-
-
-/**
- * isArrayLike(target)
- * 判断 target 是否为 类数组对象
- * @param target : any    目标
- * @returns boolean
- */
-Array.isArrayLike = function isArrayLike(target) {
-  let length = target && target.length;
-  return Number.isInteger(target.length) && length >= 0;
-};

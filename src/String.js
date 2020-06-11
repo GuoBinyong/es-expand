@@ -2,15 +2,7 @@
 
 Object.defineProperties(String.prototype,{
 
-  /**
-   * 是否是有效的 JSON 字符串
-   */
-  isJSONString:{
-    configurable:true,
-    get: function () {
-      return JSON.isJSONString(this);
-    }
-  },
+
 
 
   /**
@@ -59,7 +51,7 @@ Object.defineProperties(String.prototype,{
 
       var lowerCase = caseType == "L" ;
 
-      var targetStr = this.replace(/[A-Z]+/g,function (match,offset,oriStr) {
+      var targetStr = this.replace(/[A-Z]+/g,function (match) {
         var matchStr = lowerCase ? match.toLowerCase() : match ;
         return separator + matchStr ;
       });

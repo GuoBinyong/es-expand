@@ -1,9 +1,4 @@
 interface String {
-  /**
-   * 是否是有效的 JSON 字符串
-   */
-  readonly isJSONString: boolean;
-
 
   /**
    * 是否不包任何非空字符
