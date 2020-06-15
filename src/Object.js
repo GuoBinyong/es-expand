@@ -314,11 +314,30 @@ let propertyDescriptors = {
    * mySelf
    * 获取自己；此属性可用于获取原始类型数据对应的包装对象，即：可将原始类型的值转为对应的包装类型的实例对象
    * @returns this   返回自身
+   *
+   *
+   * 注意：弃用 mySelf 属性，改为 getSelf() 方法
+   * 原因：
+   * 返回自身的属性很容易导致一此深度遍历属性的方法（比如：深拷贝）一直循环下去，直到调用栈溢出；所以改成方法的方式；
+   *
    */
-  mySelf: {
+  // mySelf: {
+  //   configurable:true,
+  //   enumerable: false,
+  //   get: function () {
+  //     return this;
+  //   }
+  // },
+
+  /**
+   * getSelf
+   * 获取自己；此方法可用于获取原始类型数据对应的包装对象，即：可将原始类型的值转为对应的包装类型的实例对象
+   * @returns this   返回自身
+   */
+  getSelf: {
     configurable:true,
     enumerable: false,
-    get: function () {
+    value: function () {
       return this;
     }
   },
