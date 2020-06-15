@@ -115,31 +115,6 @@ declare global {
 
 
     /**
-     * depthLoopOwnProperty(callback,depth,all,thisValue,initDepth)=> stopInfo
-     * 递归遍历自身属性链中的所有属性
-     * @param callback : (key,value,obj,currDepth))=> stopInfo : any    必选； 循环遍历的回调函数； key : 当前被遍历的属性名；value : 当前被遍历的属性值；obj : 当前被遍历的属性所属的对象；currDepth : 当前遍历的深度值，从 initDepth 所表示的值开始计数；返回值 stopInfo : 表示是否中止循环，并且该值会被 depthLoopOwnProperty 函数返回，如果返回的值是真值，则终止循环；
-     * @param depth ? : number    可选；默认值：-1 ,即无限深度； 要循环遍历的深度；
-     * @param all ? : boolean    可选；默认值: false ;  是否遍历自身所有的属性，包括不可枚举的；
-     * @param thisValue ? : any    可选；   callback 回调函数的this值 ；默认值：当前被遍历的属性所属的对象；
-     * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
-     * @returns stopInfo ： any   终止循环时返回的信息；
-     */
-    depthLoopOwnProperty<ThisValue = any>(callback: (this: ThisValue, key: string, value: any, obj: any, currDepth: number) => any, depth?: number, all?: boolean, thisValue?: ThisValue, initDepth?: number): any;
-
-
-    /**
-     * depthLoopPropertyWithPrototype(callback,depth,thisValue,initDepth)=> stopInfo
-     * 递归遍历自身包括原型的属性链中的所有可枚举的属性
-     * @param callback : (key,value,obj,currDepth))=>stopInfo : any    必选； 循环遍历的回调函数； key : 当前被遍历的属性名；value : 当前被遍历的属性值；obj : 当前被遍历的属性所属的对象；currDepth : 当前遍历的深度值，从 initDepth 所表示的值开始计数；返回值 stopInfo : 表示是否中止循环，并且该值会被 depthLoopOwnProperty 函数返回，如果返回的值是真值，则终止循环；
-     * @param depth ? : number    可选；默认值：-1 ,即无限深度； 要循环遍历的深度；
-     * @param thisValue ? : any    可选；   callback 回调函数的this值 ；默认值：当前被遍历的属性所属的对象；
-     * @param initDepth ? : number   可选；默认值：1；深度的初始值； 注意：设计该属性的主要目的是为了递归调用时记录当前传递当前的深度值的；
-     * @returns stopInfo ： any   终止循环时返回的信息；
-     */
-    depthLoopPropertyWithPrototype<ThisValue = any>(callback: (this: ThisValue, key: string, value: any, obj: any, currDepth: number) => any, depth?: number, thisValue?: ThisValue, initDepth?: number): any;
-
-
-    /**
      * filterProperty(filter,thisValue)
      * 返回包含符合条件的所有属性的新对象
      * @param filter : (key,value,obj)=>boolean    必选；
