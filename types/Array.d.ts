@@ -1,5 +1,5 @@
-type TestFun<Value> = (a: Value, b: Value) => any;
-type ArrayCallbackFun<ThisValue, Value, ReturnType> = (this: ThisValue, value: Value, index: number, array: Value[]) => ReturnType;
+declare type TestFun<Value> = (a: Value, b: Value) => any;
+declare type ArrayCallbackFun<ThisValue, Value, ReturnType> = (this: ThisValue, value: Value, index: number, array: Value[]) => ReturnType;
 
 //去重：开始
 

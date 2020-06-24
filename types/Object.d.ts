@@ -1,13 +1,18 @@
 import "./Array"
 import "./String"
 
+export declare type ProxyOptions = {
+  get?: boolean,
+  set?: boolean,
+  configurable?: boolean,
+  enumerable?: boolean,
+  getDefault?: any,
+  setDefault?: any
+};
+
+
 declare global {
 
-
-  type Replace<SourType, MatchType, NewType> = SourType extends MatchType ? NewType : SourType;
-  type ReplaceUndefined<SourType, NewType> = Replace<SourType, undefined, NewType>;
-  type ReplaceNull<SourType, NewType> = Replace<SourType, null, NewType>;
-  type ReplaceVoid<SourType, NewType> = Replace<SourType, void | undefined | null, NewType>;
 
 
   interface Object {
@@ -146,15 +151,6 @@ declare global {
 
   }
 
-
-  type ProxyOptions = {
-    get?: boolean,
-    set?: boolean,
-    configurable?: boolean,
-    enumerable?: boolean,
-    getDefault?: any,
-    setDefault?: any
-  };
 
 
   interface ObjectConstructor {
