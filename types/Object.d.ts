@@ -1,14 +1,6 @@
 import "./Array"
 import "./String"
 
-export declare type ProxyOptions = {
-  get?: boolean,
-  set?: boolean,
-  configurable?: boolean,
-  enumerable?: boolean,
-  getDefault?: any,
-  setDefault?: any
-};
 
 
 declare global {
