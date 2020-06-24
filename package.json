@@ -27,7 +27,7 @@
     "Date"
   ],
   "author": "郭斌勇",
-  "license": "ISC",
+  "license": "MIT",
   "files": [
     "dist/[^.]*",
     "types/[^.]*"
