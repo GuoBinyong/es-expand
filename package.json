@@ -1,7 +1,7 @@
 {
   "name": "es-expand",
   "version": "2.4.0",
-  "description": "es-expand 提供了对 JS 中原生类型功能的扩展（如Object、Array、JSON、String、Number、Math、Date等等），也提供了一些工具函数；",
+  "description": "es-expand 提供了对 JS 中原生类型功能的扩展（如Object、Array、Function、String、Number、Math、Date等等），也提供了一些工具函数；",
   "main": "dist/es-expand.cjs.js",
   "module": "dist/es-expand.es.js",
   "types": "types/index.d.ts",
@@ -20,7 +20,7 @@
     "原生扩展",
     "Object",
     "Array",
-    "JSON",
+    "Function",
     "String",
     "Number",
     "Math",
@@ -51,6 +51,7 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
-    "@babel/runtime": "^7.9.6"
+    "@babel/runtime": "^7.9.6",
+    "fun-exp": "^1.0.0"
   }
 }

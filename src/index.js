@@ -1,3 +1,4 @@
+import "fun-exp"
 import './Array'
 import './String'
 import './Math'
